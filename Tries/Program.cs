@@ -9,10 +9,16 @@ namespace Tries
         {
             Trie trie = new Trie();
 
+            trie.Insert("babe");
+            trie.Insert("baby");
+            trie.Insert("he");
+            trie.Insert("hey");
+            trie.Insert("hell");
             trie.Insert("hello");
-            trie.Insert("bye");
-            trie.Remove("hello");
-            trie.Insert("thing");
+            trie.Insert("heaven");
+            trie.Insert("havana");
+            trie.Remove("he");
+            trie.GetAllMatchingPrefix("he");
         }
     }
 }

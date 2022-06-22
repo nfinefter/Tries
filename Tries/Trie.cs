@@ -80,7 +80,30 @@ namespace Tries
             return temp;
         }
 
+        public List<string> GetAllMatchingPrefix(string prefix)
+        {
+            List<string> words = new List<string>();
 
+            Node start = SearchNode(prefix);
+
+            GetWord(start, prefix, words);
+                     
+            return words;
+        }
+        private void GetWord(Node node, string prefix, List<string> words)
+        {
+
+            if (node.IsWord)
+            {
+                words.Add(prefix);
+            }
+
+            foreach (KeyValuePair<char, Node> kvpair in node.Children)
+            {
+                GetWord(kvpair.Value, prefix + kvpair.Key, words);
+            }
+            
+        }
 
 
         public bool Remove(string prefix)
