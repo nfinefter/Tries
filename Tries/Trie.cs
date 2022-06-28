@@ -92,6 +92,7 @@ namespace Tries
         }
         private void GetWord(Node node, string prefix, List<string> words)
         {
+            if (node == null) return;
 
             if (node.IsWord)
             {
@@ -121,7 +122,7 @@ namespace Tries
         public IEnumerator GetEnumerator()
         {
 
-            yield return "";
+            yield return " ";
         }
 
         IEnumerator IEnumerable.GetEnumerator()
